@@ -1,0 +1,20 @@
+
+lets learn about g++ compiler options by exploring codeforces g++ run command :
+ GNU C++11 4
+ g++.exe  -static 
+          -fno-optimize-sibling-calls 
+          -fno-strict-aliasing 
+          -DONLINE_JUDGE 
+          -lm 
+          -s 
+          -x c++ 
+          -Wl,--stack=268435456 
+          -O2 
+          -std=c++11 
+          -D__USE_MINGW_ANSI_STDIO=0 
+          -o {filename}.exe {file}
+
+corresponding info at the url : http://codeforces.ru/blog/entry/79 :
+ Блог пользователя MikeMirzayanov
+ О языках программирования и технических аспектах
+
