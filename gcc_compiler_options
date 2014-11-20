@@ -56,7 +56,8 @@ so lets go deeper (e.g. 'man gcc' or 'man g++' or 'man ld' which stand for compi
 
 --stack reserve
 --stack reserve,commit
-  Specify the number of bytes of memory to reserve (and optionally commit) to be used as stack for this program.  The default is 2Mb reserved, 4K committed.
+  Specify the number of bytes of memory to reserve (and optionally commit) to be used as stack for this program.  
+  The default is 2Mb reserved, 4K committed.
   [This option is specific to the i386 PE(portable executable) targeted port of the linker]
  
 -llibrary
@@ -93,8 +94,10 @@ so lets go deeper (e.g. 'man gcc' or 'man g++' or 'man ld' which stand for compi
  does not interfere with debugging.
  
 -o file
- Place output in file file. This applies regardless to whatever sort of output is being produced, whether it be an executable file, an object file, an assembler file or preprocessed C code.
- Since only one output file can be specified, it does not make sense to use `-o' when compiling more than one input file, unless you are producing an executable file as output.
+ Place output in file file. This applies regardless to whatever sort of output is being produced, 
+ whether it be an executable file, an object file, an assembler file or preprocessed C code.
+ Since only one output file can be specified, it does not make sense to use `-o' when compiling more than one input file, 
+ unless you are producing an executable file as output.
 
  If `-o' is not specified, the default is to put an executable file in `a.out', 
  the object file for `source.suffix' in `source.o', its assembler file in `source.s', 
