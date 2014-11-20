@@ -18,3 +18,67 @@ corresponding info at the url : http://codeforces.ru/blog/entry/79 :
  Блог пользователя MikeMirzayanov
  О языках программирования и технических аспектах
 
+so lets go deeper (e.g. 'man gcc' or 'man g++' or 'man ld' which stand for compiler or linker):
+
+-static
+ On systems that support dynamic linking, this prevents linking with the shared libraries. 
+ On other systems, this option has no effect.
+ 
+-x language
+ Specify explicitly the language for the following input files 
+ (rather than letting the compiler choose a default based on the file name suffix). 
+ This option applies to all following input files until the next `-x' option. Possible values for language are:
+  
+ c  c-header  cpp-output
+ c++  c++-cpp-output
+ objective-c  objc-cpp-output
+ assembler  assembler-with-cpp
+ f77  f77-cpp-input  ratfor
+ java
+ 
+-s
+ Remove all symbol table and relocation information from the executable.
+ 
+-Wl\,option
+ Pass option as an option to the linker. If option contains commas, it is split into multiple options at the commas.
+ 
+-llibrary
+ Search the library named library when linking.
+ It makes a difference where in the command you write this option; 
+ the linker searches processes libraries and object files in the order they are specified. 
+ Thus, `foo.o -lz bar.o' searches library `z' after file `foo.o' but before `bar.o'. 
+ If `bar.o' refers to functions in `z', those functions may not be loaded.
+
+ The linker searches a standard list of directories for the library, which is actually a file named `liblibrary.a'. 
+ The linker then uses this file as if it had been specified precisely by name.
+
+ The directories searched include several standard system directories plus any that you specify with `-L'.
+
+ Normally the files found this way are library files--archive files whose members are object files. 
+ The linker handles an archive file by scanning through it for members which define symbols 
+ that have so far been referenced but not defined. 
+ But if the file that is found is an ordinary object file, it is linked in the usual fashion. 
+ The only difference between using an `-l' option and specifying a file name is that `-l' surrounds library 
+ with `lib' and `.a' and searches several directories.
+ 
+-lm is for m.lib
+ The MLib (pronounced "M-Lib") is a C software framework that significantly simplifies the development of 
+ highly reliable system-level libraries and programs (like daemons/services). 
+ It is small, efficient, robust and highly portable, and was designed primarily for embedded systems.
+ 
+-O2
+ Optimize even more. 
+ GCC performs nearly all supported optimizations that do not involve a space-speed tradeoff. 
+ The compiler does not perform loop unrolling or function inlining when you specify `-O2'. 
+ As compared to `-O', this option increases both compilation time and the performance of the generated code.
+ `-O2' turns on all optional optimizations except for loop unrolling, function inlining, and register renaming. 
+ It also turns on the `-fforce-mem' option on all machines and frame pointer elimination on machines where doing so 
+ does not interfere with debugging.
+ 
+-o file
+ Place output in file file. This applies regardless to whatever sort of output is being produced, whether it be an executable file, an object file, an assembler file or preprocessed C code.
+ Since only one output file can be specified, it does not make sense to use `-o' when compiling more than one input file, unless you are producing an executable file as output.
+
+ If `-o' is not specified, the default is to put an executable file in `a.out', 
+ the object file for `source.suffix' in `source.o', its assembler file in `source.s', 
+ and all preprocessed C source on standard output. 
