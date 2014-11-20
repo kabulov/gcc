@@ -14,6 +14,18 @@ lets learn about g++ compiler options by exploring codeforces g++ run command :
           -D__USE_MINGW_ANSI_STDIO=0 
           -o {filename}.exe {file}
 
+-foptimize-sibling-calls
+ Optimize sibling and tail recursive calls.
+ Enabled at levels -O2, -O3, -Os.
+ http://stackoverflow.com/questions/22037261/what-does-sibling-calls-mean
+  In practice, GCC synonym for "tail" (they refer to it as a.k.a. tail in the internals documentation). 
+  Formally, some function which has a return type of the same size and a parameter list of the same total word size. 
+  Thus, e.g. int foo(char, char) and int bar(short) would be siblings and could be tail-optimized 
+  (so foo calling bar which calls foo would in principle work)
+
+-fno-strict-aliasing
+ http://habrahabr.ru/post/114117/
+ 
 corresponding info at the url : http://codeforces.ru/blog/entry/79 :
  Блог пользователя MikeMirzayanov
  О языках программирования и технических аспектах
@@ -41,6 +53,11 @@ so lets go deeper (e.g. 'man gcc' or 'man g++' or 'man ld' which stand for compi
  
 -Wl\,option
  Pass option as an option to the linker. If option contains commas, it is split into multiple options at the commas.
+
+--stack reserve
+--stack reserve,commit
+  Specify the number of bytes of memory to reserve (and optionally commit) to be used as stack for this program.  The default is 2Mb reserved, 4K committed.
+  [This option is specific to the i386 PE(portable executable) targeted port of the linker]
  
 -llibrary
  Search the library named library when linking.
