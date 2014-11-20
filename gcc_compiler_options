@@ -14,7 +14,7 @@ lets learn about g++ compiler options by exploring codeforces g++ run command :
           -D__USE_MINGW_ANSI_STDIO=0 
           -o {filename}.exe {file}
 
--foptimize-sibling-calls
+-f[no]optimize-sibling-calls
  Optimize sibling and tail recursive calls.
  Enabled at levels -O2, -O3, -Os.
  http://stackoverflow.com/questions/22037261/what-does-sibling-calls-mean
@@ -23,7 +23,7 @@ lets learn about g++ compiler options by exploring codeforces g++ run command :
   Thus, e.g. int foo(char, char) and int bar(short) would be siblings and could be tail-optimized 
   (so foo calling bar which calls foo would in principle work)
 
--fno-strict-aliasing
+-f[no-]strict-aliasing
  http://habrahabr.ru/post/114117/
  
 corresponding info at the url : http://codeforces.ru/blog/entry/79 :
